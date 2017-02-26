@@ -2,12 +2,15 @@
 
 <!--div style="margin: auto; padding-top: 50px; padding-bottom: 50px; width: 80%; background: rgba(30,30,30,0.9)"/-->
 
-<h1>Your talk</h1>
-### _subtitle_
+# Custom Elements and Shadow DOM
+### Cross-framework Web Development
 
 <br>
 
-Jack D, Esri
+#### Patrick Arlt, Esri
+
+#### Slides: http://bit.ly/2lZU2lI
+#### Code: http://bit.ly/2mkyqRN
 
 ---
 

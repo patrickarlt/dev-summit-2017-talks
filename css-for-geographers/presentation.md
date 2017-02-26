@@ -2,12 +2,13 @@
 
 <!--div style="margin: auto; padding-top: 50px; padding-bottom: 50px; width: 80%; background: rgba(30,30,30,0.9)"/-->
 
-<h1>Your talk</h1>
-### _subtitle_
+# CSS For Geographers
 
 <br>
 
-Jack D, Esri
+#### Patrick Arlt
+
+#### Slides: http://bit.ly/2le4IJe
 
 ---
 
