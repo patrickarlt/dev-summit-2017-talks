@@ -253,9 +253,8 @@ Now lets use Shadow DOM to isolate the implimentation details of our `<arcgis-ba
 
 ## Consuming Components in Framworks
 
-* React
-* Ember
-* Angular
+* [React](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/react-app/build/)
+* [Angular]()
 
 ---
 
