@@ -113,7 +113,7 @@ By combining custom elements and the JS API we can make reusable mapping compone
 
 A simple custom element for displaying a web map.
 
-[Demo](http://jsbin.com/kaxarov/edit?html,css,js,output)
+[Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/custom-elements-map.html)
 
 ---
 
@@ -121,7 +121,7 @@ A simple custom element for displaying a web map.
 
 Wrap the `LayerList` widget from the JS API in a custom element.
 
-[Demo](http://jsbin.com/xivaqi/edit?html,css,js,output)
+[Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/custom-elements-layer-list.html)
 
 ---
 
@@ -129,7 +129,7 @@ Wrap the `LayerList` widget from the JS API in a custom element.
 
 Instead of wrapping the existing `BasemapToggle` widget, lets impliment `BasemapToggleViewModel` and make a custom toggle.
 
-[Demo](https://jsbin.com/cojumun/edit?js,output)
+[Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/custom-elements-basemap-toggle.html)
 
 ---
 
@@ -162,7 +162,7 @@ const allLinks = document.querySelectorAll('a');
 console.log(allLinks);  // => []
 ```
 
-http://jsbin.com/muquho/edit?html,js,output
+[Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/shadow-dom-isolation.html)
 
 ---
 
@@ -199,7 +199,7 @@ http://jsbin.com/muquho/edit?html,js,output
 <button>Outside Shadow DOM</button>
 ```
 
-http://jsbin.com/yenuqoy/edit?html,output
+[Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/shadow-dom-scoped-css.html)
 
 ---
 
@@ -231,7 +231,7 @@ shadowRoot.appendChild(template.content.cloneNode(true))
 </script>
 ```
 
-http://jsbin.com/lekijuw/edit?html,output
+[Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/shadow-dom-composition.html)
 
 ---
 

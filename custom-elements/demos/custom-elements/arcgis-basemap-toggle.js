@@ -25,7 +25,7 @@ require([
       this.removeChild(this.button);
       if (this.boundViewHandler && this.webmap) {
         const webmap = document.getElementById(this.webmap);
-        webmap.removeEventListener('arcigswebmapviewready', this.boundViewHandler);
+        webmap.removeEventListener('arcigswebmapsetup', this.boundViewHandler);
       }
     }
 
@@ -44,11 +44,11 @@ require([
           this.viewModel.nextBasemap = this.basemap;
           this.viewModel.view = webmap.view;
           if (this.boundViewHandler) {
-            webmap.removeEventListener('arcigswebmapviewready', this.boundViewHandler);
+            webmap.removeEventListener('arcigswebmapsetup', this.boundViewHandler);
           }
         } else if (webmap) {
           this.boundViewHandler = this.setupViewModel.bind(this);
-          webmap.addEventListener('arcigswebmapviewready', this.boundViewHandler);
+          webmap.addEventListener('arcigswebmapsetup', this.boundViewHandler);
         }
       }
     }
