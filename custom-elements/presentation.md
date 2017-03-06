@@ -11,37 +11,39 @@
 
 ---
 
+<!-- .slide: data-background="../template/images/Slide2.png" -->
+
 I'm starting to notice something about JavaScript Frameworks&hellip;
 
 ---
 
-### Angular 2
+<!-- .slide: data-background="../template/images/Slide2.png" -->
 
 ```html
+<!-- Angular 2 -->
 <delete-button [item]="..." (click)="..."></delete-button>
 ```
 
-### React
-
 ```html
-<DeleteButton item="..." onClick="..." />
-```
-
-### Ember
-
-```html
+<!-- Ember -->
 {{delete-button item="..." onclick="..."}}
 ```
 
-### Vue.js
+```html
+<!-- React -->
+<DeleteButton item="..." onClick="..." />
+```
 
 ```html
+<!-- Vue JS -->
 <delete-button item="..." v-on:click="..."><delete-button>
 ```
 
 ---
 
-## Common Framework Features
+<!-- .slide: data-background="../template/images/Slide2.png" -->
+
+## JavaScript Frameworks are all the same&hellip;
 
 * Manage a tree of components
 * Pass data down through the tree
@@ -49,13 +51,23 @@ I'm starting to notice something about JavaScript Frameworks&hellip;
 
 ---
 
-Wait a sec isn't this just the DOM?
+<!-- .slide: data-background="../template/images/Slide2.png" -->
+
+## Wait a sec isn't this just the DOM?
 
 ---
 
+<!-- .slide: data-background="../template/images/Slide4.png" -->
+
 ## Enter Web Components
 
-Web Components allow creating custom HTML tags like our `<delete-button>`. But natively without a framework.
+Web Components allow creating custom HTML tags like our <br>`<delete-button>`. But without a framework.
+
+---
+
+<!-- .slide: data-background="../template/images/Slide4.png" -->
+
+## The Web Component Standards
 
 * Custom Elements
 * Shadow DOM
@@ -64,11 +76,15 @@ Web Components allow creating custom HTML tags like our `<delete-button>`. But n
 
 ---
 
-# Custom Elements
+<!-- .slide: data-background="../template/images/Slide4.png" -->
+
+### Custom Elements
 
 Register custom HTML tags with the browser.
 
 ---
+
+<!-- .slide: data-background="../template/images/Slide4.png" -->
 
 ```js
 // Custom Element Definition
@@ -99,6 +115,8 @@ customElements.define('my-element', MyElement);
 
 ---
 
+<!-- .slide: data-background="../template/images/Slide4.png" -->
+
 ### Custom Element and The JS API
 
 By combining custom elements and the JS API we can make reusable mapping components that we can custom HTML Elements and share across frameworks.
@@ -109,6 +127,8 @@ By combining custom elements and the JS API we can make reusable mapping compone
 
 ---
 
+<!-- .slide: data-background="../template/images/Slide4.png" -->
+
 ### `<arcgis-web-map>`
 
 A simple custom element for displaying a web map.
@@ -116,6 +136,8 @@ A simple custom element for displaying a web map.
 [Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/custom-elements-map.html)
 
 ---
+
+<!-- .slide: data-background="../template/images/Slide4.png" -->
 
 ### `<arcgis-layer-list>`
 
@@ -125,6 +147,8 @@ Wrap the `LayerList` widget from the JS API in a custom element.
 
 ---
 
+<!-- .slide: data-background="../template/images/Slide4.png" -->
+
 ### `<arcgis-basemap-toggle>`
 
 Instead of wrapping the existing `BasemapToggle` widget, lets impliment `BasemapToggleViewModel` and make a custom toggle.
@@ -133,134 +157,56 @@ Instead of wrapping the existing `BasemapToggle` widget, lets impliment `Basemap
 
 ---
 
-## 2 Problems
+<!-- .slide: data-background="../template/images/Slide4.png" -->
+
+### 2 Problems
 
 * Change the content of our toggle?
 * Isolate the implimentation details of our components?
 
 ---
 
-# Shadow DOM
+<!-- .slide: data-background="../template/images/Slide5.png" -->
 
-* **Isolate** (hide) DOM inside components
-* **Scope** CSS inside components
-* **Compose** external DOM and interal DOM
+## Shadow DOM
 
----
+Reduce the "global" nature of JavaScript, CSS and HTML.
 
-# Shadow DOM : Isolation
-
-```js
-const container = document.createElement('div');
-const shadowRoot = container.attachShadow({ mode: 'closed' });
-document.body.appendChild(container);
-
-const link = document.createElement('a');
-shadowRoot.appendChild(link);
-
-const allLinks = document.querySelectorAll('a');
-console.log(allLinks);  // => []
-```
-
-[Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/shadow-dom-isolation.html)
+* **Isolate** internal DOM inside components - [Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/shadow-dom-isolation.html)
+* **Scope** CSS inside components - [Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/shadow-dom-scoped-css.html)
+* **Compose** external DOM and interal DOM - [Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/shadow-dom-composition.html)
 
 ---
 
-# Shadow DOM : Scoped CSS
-
-```html
-<style>
-  button {
-    padding: 1rem;
-    background: lightgreen;
-    border: 3px solid green;
-  }
-</style>
-
-<script>
-  const container = document.createElement('div');
-  const shadowRoot = container.attachShadow({ mode: 'closed' });
-  document.body.appendChild(container);
-
-  shadowRoot.innerHTML = `
-    <style>
-      button {
-        padding: 1rem 2.5rem;
-        background: lightcyan;
-        border: 3px solid cyan;
-      }
-    </style>
-
-    <button>Inside Shadow DOM</button>
-  `
-  shadowRoot.appendChild(button);
-</script>
-
-<button>Outside Shadow DOM</button>
-```
-
-[Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/shadow-dom-scoped-css.html)
-
----
-
-# Shadow DOM : Composition
-
-```html
-<template id="panel-template">
-  <style>
-    .panel {
-      display: block;
-      border: solid 3px gray;
-      border-radius: 0.5rem;
-      padding: 0.5rem;
-      background: lightgray
-    }
-  </style>
-  <div class="panel">
-    <slot></slot>
-  </div>
-</template>
-<div id="panel">
-  <p>Content of the panel.</p>
-</div>
-<script>
-const template = document.getElementById('panel-template');
-const panel = document.getElementById('panel');
-const shadowRoot = panel.attachShadow({ mode: 'closed' });
-shadowRoot.appendChild(template.content.cloneNode(true))
-</script>
-```
-
-[Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/shadow-dom-composition.html)
-
----
+<!-- .slide: data-background="../template/images/Slide5.png" -->
 
 ### `<arcgis-basemap-toggle>`
 
-Now lets use Shadow DOM to isolate the implimentation details of our `<arcgis-basemap-toggle>`.
+Shadow DOM isolates the DOM and CSS of our <br>`<arcgis-basemap-toggle>`.
 
 [Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/custom-element-with-shadow-dom.html)
 
 ---
 
+<!-- .slide: data-background="../template/images/Slide5.png" -->
+
 ## Quick Review
 
-* 3 custom element
-* Isolated implimentation details
-*
+* 3 custom elements
+* Isolated DOM and CSS
 
 ---
 
-## Consuming Components in Framworks
+<!-- .slide: data-background="../template/images/Slide2.png" -->
+
+## Web Components in Framworks
 
 * [React](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/react-app/build/)
-* [Angular]()
+* [Angular](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/angular-app/dist/)
 
 ---
 
-# Practical Web Components
-
----
+<!-- .slide: data-background="../template/images/Slide2.png" -->
 
 ## Modern Browser Support
 
@@ -273,27 +219,33 @@ Now lets use Shadow DOM to isolate the implimentation details of our `<arcgis-ba
 
 ---
 
+<!-- .slide: data-background="../template/images/Slide2.png" -->
+
 ## Using Custom Elements Today
 
 1. Polyfill the spec
   * [Web Components polyfill](https://github.com/webcomponents/custom-elements)
   * [Lightweight ~3k polyfill](https://github.com/WebReflection/document-register-element)
-2. Compile Custom Element code with Babel or TypeScript
-  * Makes the new ES2015 class syntax work.
+2. Compile with Babel or TypeScript
+  * Makes the new ES2015 class syntax work
 
 ---
+
+<!-- .slide: data-background="../template/images/Slide2.png" -->
 
 ## Use Cases for Custom Elements
 
-The best use case for Custom Elements remains sharing code amoung differnt sites, frameworks and apps.
+Custom Elements are best for sharing code amoung different sites, frameworks and apps.
 
-Don't make apps with Custom Elements. Make UI components.
+Don't make apps make UI components.
 
 ---
 
-## Custom Elements on developers.arcgis.com
+<!-- .slide: data-background="../template/images/Slide2.png" -->
 
-Components allow us to bundle the same logic amoung the differnt build systems that make up the site.
+## Custom Elements on ArcGIS for Developers
+
+Share code amoung the differnt build systems and tools
 
 * `<developers-download-button>`
 * `<developers-sign-in>`
@@ -302,29 +254,28 @@ Components allow us to bundle the same logic amoung the differnt build systems t
 
 ---
 
+<!-- .slide: data-background="../template/images/Slide2.png" -->
+
 ## Using Shadow DOM Today
 
 No stable polyfills. Waiting on [ShadyDOM](https://github.com/webcomponents/shadydom) for implimenting the API and [ShadyCSS](https://github.com/webcomponents/shadycss) for CSS scoping. No stable version of either polyfill, and both have some bugs.
 
 ---
 
+<!-- .slide: data-background="../template/images/Slide2.png" -->
+
 ## The Future of Shadow DOM
 
-Given time the polyfills will stabalize and all major browser vendors will support Shadow DOM.
+Polyfills will stabalize and major browser vendors will support Shadow DOM.
 
 ---
 
-## The Future of HTML Imports
+<!-- .slide: data-background="../template/images/Slide2.png" -->
 
-Just like with Shadow DOM and Custom Elements there will probally be a new revision of the HTML Imports spec that can be polyfilled and implimented by browsers.
-
----
-
-# Bright Future
+## Bright Future
 
 * Shadow DOM will get wide support
 * Custom Elements is easy to use and polyfill
-* HTML Imports will get a revision
 
 ---
 
@@ -333,13 +284,12 @@ Just like with Shadow DOM and Custom Elements there will probally be a new revis
 # Thank You!
 
 * Slides: http://bit.ly/2lZU2lI
-* Code: http://bit.ly/2mkyqRN
 
 ### Leave Feedback
 
 * Download the Esri Events App
 * Go to Dev Summit
-* Select "CSS for Geographers"
+* Select "Custom Elements and Shadow DOM:<br>Cross-framework Web Development"
 * Leave a Review!
 
 ---
