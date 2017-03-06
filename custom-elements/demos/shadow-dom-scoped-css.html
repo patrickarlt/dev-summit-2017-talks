@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+    button {
+      padding: 1rem;
+      background: lightgreen;
+      font-family: sans-serif;
+      border: 3px solid green;
+    }
+  </style>
+</head>
+<body>
+
+  <button>Outside Shadow DOM</button>
+
+  <script>
+    const container = document.createElement('div');
+    const shadowRoot = container.attachShadow({ mode: 'closed' });
+    document.body.appendChild(container);
+
+    shadowRoot.innerHTML = `
+      <style>
+        button {
+          padding: 1rem 2.5rem;
+          background: lightcyan;
+          font-family: sans-serif;
+          border: 3px solid cyan;
+        }
+      </style>
+
+      <button>Inside Shadow DOM</button>
+    `;
+    shadowRoot.appendChild(button);
+  </script>
+
+</body>
+</html>
