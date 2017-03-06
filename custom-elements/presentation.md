@@ -326,3 +326,22 @@ Just like with Shadow DOM and Custom Elements there will probally be a new revis
 * Shadow DOM will get wide support
 * Custom Elements is easy to use and polyfill
 * HTML Imports will get a revision
+
+---
+
+<!-- .slide: data-background="../template/images/Slide4.png" -->
+
+# Thank You!
+
+* Slides - http://bit.ly/2le4IJe
+
+### Leave Feedback
+
+* Download the Esri Events App
+* Go to Dev Summit
+* Select "CSS for Geographers"
+* Leave a Review!
+
+---
+
+<!-- .slide: data-background="../template/images/Slide6.png" -->
