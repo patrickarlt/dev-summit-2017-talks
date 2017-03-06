@@ -3,11 +3,11 @@
 # Custom Elements and <br> Shadow DOM
 ### Cross-framework Web Development
 
-<br>
+Patrick Arlt | [@patrickarlt](https://twitter.com/patrickarlt)
 
-#### Patrick Arlt | [@patrickarlt](https://twitter.com/patrickarlt)
-#### Slides: http://bit.ly/2lZU2lI
-#### Code: http://bit.ly/2mkyqRN
+Slides: http://bit.ly/2lZU2lI
+
+Code: http://bit.ly/2mkyqRN
 
 ---
 
@@ -67,6 +67,16 @@ Web Components allow creating custom HTML tags like our <br>`<delete-button>`. B
 
 <!-- .slide: data-background="../template/images/Slide4.png" -->
 
+## Why Web Components
+
+Having a low level specification for creating components allow frameworks to share common components.
+
+Write components once, consume in any framework.
+
+---
+
+<!-- .slide: data-background="../template/images/Slide4.png" -->
+
 ## The Web Component Standards
 
 * Custom Elements
@@ -121,39 +131,9 @@ customElements.define('my-element', MyElement);
 
 By combining custom elements and the JS API we can make reusable mapping components that we can custom HTML Elements and share across frameworks.
 
-* `<arcgis-web-map>`
-* `<arcgis-layer-list>`
-* `<arcgis-basemap-toggle>`
-
----
-
-<!-- .slide: data-background="../template/images/Slide4.png" -->
-
-### `<arcgis-web-map>`
-
-A simple custom element for displaying a web map.
-
-[Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/custom-elements-map.html)
-
----
-
-<!-- .slide: data-background="../template/images/Slide4.png" -->
-
-### `<arcgis-layer-list>`
-
-Wrap the `LayerList` widget from the JS API in a custom element.
-
-[Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/custom-elements-layer-list.html)
-
----
-
-<!-- .slide: data-background="../template/images/Slide4.png" -->
-
-### `<arcgis-basemap-toggle>`
-
-Instead of wrapping the existing `BasemapToggle` widget, lets impliment `BasemapToggleViewModel` and make a custom toggle.
-
-[Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/custom-elements-basemap-toggle.html)
+* `<arcgis-web-map>` - [Demo](./demos/custom-elements-map.html)
+* `<arcgis-layer-list>` - [Demo](./demos/custom-elements-layer-list.html)
+* `<arcgis-basemap-toggle>` - [Demo](./demos/custom-elements-basemap-toggle.html)
 
 ---
 
@@ -172,9 +152,9 @@ Instead of wrapping the existing `BasemapToggle` widget, lets impliment `Basemap
 
 Reduce the "global" nature of JavaScript, CSS and HTML.
 
-* **Isolate** internal DOM inside components - [Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/shadow-dom-isolation.html)
-* **Scope** CSS inside components - [Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/shadow-dom-scoped-css.html)
-* **Compose** external DOM and interal DOM - [Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/shadow-dom-composition.html)
+* **Isolate** internal DOM inside components - [Demo](./demos/shadow-dom-isolation.html)
+* **Scope** CSS inside components - [Demo](./demos/shadow-dom-scoped-css.html)
+* **Compose** external DOM and interal DOM - [Demo](./demos/shadow-dom-composition.html)
 
 ---
 
@@ -184,7 +164,7 @@ Reduce the "global" nature of JavaScript, CSS and HTML.
 
 Shadow DOM isolates the DOM and CSS of our <br>`<arcgis-basemap-toggle>`.
 
-[Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/custom-element-with-shadow-dom.html)
+[Demo](./demos/custom-element-with-shadow-dom.html)
 
 ---
 
