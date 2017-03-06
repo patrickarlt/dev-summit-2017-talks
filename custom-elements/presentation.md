@@ -239,7 +239,7 @@ shadowRoot.appendChild(template.content.cloneNode(true))
 
 Now lets use Shadow DOM to isolate the implimentation details of our `<arcgis-basemap-toggle>`.
 
-[Demo](https://jsbin.com/wefevu/edit?html,css,output)
+[Demo](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/custom-element-with-shadow-dom.html)
 
 ---
 
@@ -333,7 +333,8 @@ Just like with Shadow DOM and Custom Elements there will probally be a new revis
 
 # Thank You!
 
-* Slides - http://bit.ly/2le4IJe
+* Slides: http://bit.ly/2lZU2lI
+* Code: http://bit.ly/2mkyqRN
 
 ### Leave Feedback
 
