@@ -105,6 +105,12 @@ require([
       e.preventDefault();
     }
 
+    /**
+     * These getters and setters expose properties to JavaScript that mirror the
+     * attributes. This is neccessary since some frameworks bind to these attributes
+     * rather then DOM properties and this makes your DOM elements easier to work
+     * with in JavaScript.
+     */
     get webmap () {
       return this.getAttribute('webmap');
     }

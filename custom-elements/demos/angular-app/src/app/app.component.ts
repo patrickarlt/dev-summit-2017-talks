@@ -12,11 +12,10 @@ export class AppComponent {
   }
 
   handleSubmit (e) {
-    console.log(e);
+    e.preventDefault();
   }
 
   handleChange (e) {
-    console.log(e.target.value);
     this.webmap = e.target.value;
   }
 }

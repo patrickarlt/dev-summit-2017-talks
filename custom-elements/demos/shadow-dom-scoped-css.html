@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>JS Bin</title>
+  <title>Shadow DOM Scoped CSS Demo : Esri Dev Summit 2017</title>
+
+  <!-- some default button styling for buttons-->
   <style>
     button {
       padding: 1rem;
@@ -12,17 +14,22 @@
       border: 3px solid green;
     }
   </style>
-  <script src="https://rawgit.com/webcomponents/webcomponentsjs/master/webcomponents-sd-ce.js "></script>
 </head>
 <body>
-
+  <!-- this button will be styled like our default green buttons -->
   <button>Outside Shadow DOM</button>
-  <input type="text">
+
+  <br>
+
   <script>
+    // create a new container and attach a shadow root to it
     const container = document.createElement('div');
     const shadowRoot = container.attachShadow({ mode: 'closed' });
     document.body.appendChild(container);
 
+    // now lets add some HTML to our shadow root, since the <style> is inside the
+    // shadow it will apply to the button inside the shadow DOM only these styles
+    // will apply to it.
     shadowRoot.innerHTML = `
       <style>
         button {

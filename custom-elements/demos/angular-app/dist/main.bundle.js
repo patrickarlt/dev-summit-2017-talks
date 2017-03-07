@@ -56,10 +56,9 @@ var AppComponent = (function () {
         this.webmap = '6e3ef9427a07417e9e576c1652fbdbc4';
     }
     AppComponent.prototype.handleSubmit = function (e) {
-        console.log(e);
+        e.preventDefault();
     };
     AppComponent.prototype.handleChange = function (e) {
-        console.log(e.target.value);
         this.webmap = e.target.value;
     };
     AppComponent = __decorate([

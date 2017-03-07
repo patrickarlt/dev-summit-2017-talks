@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>JS Bin</title>
+  <title>Shadow DOM Composition Demo : Esri Dev Summit 2017</title>
+
+  <!-- apply some default styling to all text  -->
   <style>
     body {
       font-size: 2rem;
@@ -13,6 +15,8 @@
   </style>
 </head>
 <body>
+
+<!-- using a template makes stamping out DOM structures much easier but we could use element.innerHTML too. -->
 <template id="panel-template">
   <style>
     .panel {
@@ -27,13 +31,22 @@
     <slot></slot>
   </div>
 </template>
+
+<!-- This is the element we will turn into our panel -->
 <div id="panel">
   <p>Content of the panel.</p>
 </div>
+
 <script>
-const template = document.getElementById('panel-template');
-const panel = document.getElementById('panel');
-const shadowRoot = panel.attachShadow({ mode: 'closed' });
-shadowRoot.appendChild(template.content.cloneNode(true))
+  // get a reference to our template
+  const template = document.getElementById('panel-template');
+
+  // get a reference to the element we want to be our panel
+  const panel = document.getElementById('panel');
+
+  // attach a shadow root to our panel, this will cause children of #pane
+  // to be distributed into the <slot> elements.
+  const shadowRoot = panel.attachShadow({ mode: 'closed' });
+  shadowRoot.appendChild(template.content.cloneNode(true))
 </script>
 </body>
