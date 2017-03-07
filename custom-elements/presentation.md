@@ -25,6 +25,11 @@ I'm starting to notice something about JavaScript Frameworks&hellip;
 ```
 
 ```html
+<!-- Vue JS -->
+<delete-button item="..." v-on:click="..."><delete-button>
+```
+
+```html
 <!-- Ember -->
 {{delete-button item="..." onclick="..."}}
 ```
@@ -34,20 +39,15 @@ I'm starting to notice something about JavaScript Frameworks&hellip;
 <DeleteButton item="..." onClick="..." />
 ```
 
-```html
-<!-- Vue JS -->
-<delete-button item="..." v-on:click="..."><delete-button>
-```
-
 ---
 
 <!-- .slide: data-background="../template/images/Slide2.png" -->
 
-## JavaScript Frameworks are all the same&hellip;
+## Trees of Components&hellip;
 
 * Manage a tree of components
-* Pass data down through the tree
-* Listen for events on the component tree
+* Pass data down
+* Listen for events up
 
 ---
 
@@ -69,9 +69,7 @@ Web Components allow creating custom HTML tags like our <br>`<delete-button>`. B
 
 ## Why Web Components
 
-Having a low level specification for creating components allow frameworks to share common components.
-
-Write components once, consume in any framework.
+Write components once, consume in any framework. Abstract differences in systems via HTML.
 
 ---
 
@@ -97,7 +95,6 @@ Register custom HTML tags with the browser.
 <!-- .slide: data-background="../template/images/Slide4.png" -->
 
 ```js
-// Custom Element Definition
 class MyElement extends HTMLElement {
   // return an array of the attribute names you want to watch for changes.
   static get observedAttributes() {
@@ -179,10 +176,20 @@ Shadow DOM isolates the DOM and CSS of our <br>`<arcgis-basemap-toggle>`.
 
 <!-- .slide: data-background="../template/images/Slide2.png" -->
 
-## Web Components in Framworks
+## Web Components in Frameworks
 
 * [React](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/react-app/build/)
 * [Angular](http://patrickarlt.com/dev-summit-2017-talks/custom-elements/demos/angular-app/dist/)
+
+---
+
+<!-- .slide: data-background="../template/images/Slide2.png" -->
+
+## Maximize Compatibility
+
+* Always use `this.dispatchEvent` and `CustomEvent`
+* Don't use fancy event names like  `web-map-setup`. Use `webmapsetup` instead
+* Always declare matching properties for your attributes
 
 ---
 
@@ -213,24 +220,24 @@ Shadow DOM isolates the DOM and CSS of our <br>`<arcgis-basemap-toggle>`.
 
 <!-- .slide: data-background="../template/images/Slide2.png" -->
 
-## Use Cases for Custom Elements
+## Custom Elements on <br>ArcGIS for Developers
 
-Custom Elements are best for sharing code amoung different sites, frameworks and apps.
+Share code among the different build systems and tools
 
-Don't make apps make UI components.
+* `<developers-download-button>`
+* `<developers-sign-in>`
+* `<developers-search>`
+* ~16 elements total
 
 ---
 
 <!-- .slide: data-background="../template/images/Slide2.png" -->
 
-## Custom Elements on ArcGIS for Developers
+## Use Cases for Custom Elements
 
-Share code amoung the differnt build systems and tools
+Custom Elements are best for sharing code among different sites, frameworks and apps.
 
-* `<developers-download-button>`
-* `<developers-sign-in>`
-* `<developers-search>`
-* Ect&hellip; ~16 elements total
+Don't make apps, make UI components.
 
 ---
 
@@ -238,7 +245,7 @@ Share code amoung the differnt build systems and tools
 
 ## Using Shadow DOM Today
 
-No stable polyfills. Waiting on [ShadyDOM](https://github.com/webcomponents/shadydom) for implimenting the API and [ShadyCSS](https://github.com/webcomponents/shadycss) for CSS scoping. No stable version of either polyfill, and both have some bugs.
+Don't. The [ShadyDOM](https://github.com/webcomponents/shadydom) and [ShadyCSS](https://github.com/webcomponents/shadycss) polyfill are highly unstable.
 
 ---
 
@@ -246,7 +253,7 @@ No stable polyfills. Waiting on [ShadyDOM](https://github.com/webcomponents/shad
 
 ## The Future of Shadow DOM
 
-Polyfills will stabalize and major browser vendors will support Shadow DOM.
+Soon.
 
 ---
 

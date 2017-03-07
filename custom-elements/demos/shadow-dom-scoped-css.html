@@ -12,11 +12,12 @@
       border: 3px solid green;
     }
   </style>
+  <script src="https://rawgit.com/webcomponents/webcomponentsjs/master/webcomponents-sd-ce.js "></script>
 </head>
 <body>
 
   <button>Outside Shadow DOM</button>
-
+  <input type="text">
   <script>
     const container = document.createElement('div');
     const shadowRoot = container.attachShadow({ mode: 'closed' });
@@ -34,7 +35,6 @@
 
       <button>Inside Shadow DOM</button>
     `;
-    shadowRoot.appendChild(button);
   </script>
 
 </body>

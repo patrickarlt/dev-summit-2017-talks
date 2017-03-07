@@ -1,36 +1,24 @@
 <!-- .slide: data-background="../template/images/Slide1.png" -->
 
-<!--div style="margin: auto; padding-top: 50px; padding-bottom: 50px; width: 80%; background: rgba(30,30,30,0.9)"/-->
-
 # CSS For Geographers
 
-<br>
+Patrick Arlt | [@patrickarlt](https://twitter.com/patrickarlt)
 
-#### Patrick Arlt | [@patrickarlt](https://twitter.com/patrickarlt)
-
-#### Slides: http://bit.ly/2le4IJe
+Slides: http://bit.ly/2le4IJe
 
 ---
 
 <!-- .slide: data-background="../template/images/Slide5.png" -->
 
-## What is this?
+## This talk is all fundamentals.
 
 ---
 
 <!-- .slide: data-background="../template/images/Slide5.png" -->
 
-Lots of tools. Very little fundamentals.
+## First Some Notes
 
-<p class="fragment">This talk is all fundamentals</p>
-
----
-
-<!-- .slide: data-background="../template/images/Slide5.png" -->
-
-## First Some Notes</h2>
-
-Lots of supplimental info in these slides.
+Lots of supplemental info in these slides.
 
 Designed to help you keep learning beyond this talk.
 
@@ -42,7 +30,7 @@ Designed to help you keep learning beyond this talk.
 
 * Closer to art then computer science
 * Lots of hard, unintuitive concepts
-* It has taken me **years** to amass this knowlage
+* It has taken me **years** to amass this knowledge
 
 ---
 
@@ -68,7 +56,10 @@ Designed to help you keep learning beyond this talk.
 ### Where does CSS go?
 
 * Inside a `<style>` tag.
-* Inside a `.css` file that is loaded with a `<link>` tag. <br> `<link href="file.css" rel="stylesheet" type="text/css">`
+* Inside a `.css` file that is loaded with a `<link>` tag.
+  ```html
+  <link href="file.css" rel="stylesheet" type="text/css">
+  ```
 * In the `<head>` tag of your `.html` files.
 
 ---
@@ -77,7 +68,7 @@ Designed to help you keep learning beyond this talk.
 
 ### What does CSS look like?
 
-<pre style="font-size: 125%;" class="fragment"><code class="ss">html, body, #map {
+<pre style="font-size: 125%;"><code class="ss">html, body, #map {
   margin: 0;
   width: 100%;
   height: 100%;
@@ -89,7 +80,7 @@ Designed to help you keep learning beyond this talk.
 
 ### Selector
 
-<pre style="font-size: 125%;"><code class="css">html, body, #map
+<pre style="font-size: 125%;"><code class="css">html, body, #map&nbsp;&nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
@@ -225,7 +216,7 @@ Styles from different sources _cascade_ and coalesce into the final styles for t
 
 ### CSS Specificity
 
-When rules colide specificity determines which rule wins.
+When properties collide specificity determines which property wins.
 
 1. Rules with `!important`
 2. Inline styles `<div style="...">`
@@ -258,15 +249,15 @@ In a specificity tie the last loaded rule wins.
 
 Right click on something you want to change click "Inspect Element"
 
-[Explore a Storymap](http://storymaps.esri.com/stories/solarplants/)
+[Explore a Storymap](http://storymaps.esri.com/stories/2015/living-wage-map/)
 
 ---
 
 <!-- .slide: data-background="../template/images/Slide4.png" -->
 
-## Building our App
+## Lets Build an App!
 
-<img src="app.png" alt="Our App" style="border: none; background: transparent; box-shadow: none;">
+<img src="app.png" alt="A Simple Mapping App" style="border: none; background: transparent; box-shadow: none;">
 
 ---
 
@@ -309,13 +300,13 @@ Right click on something you want to change click "Inspect Element"
 
 <!-- .slide: data-background="../template/images/Slide4.png" -->
 
-<h2><a href="http://jsbin.com/nisuzu/9/edit?html,output">Problems with Floats</a></h2>
+<h2><a href="http://jsbin.com/nisuzu/13/edit?html,output">Problems with Floats</a></h2>
 
 ---
 
 <!-- .slide: data-background="../template/images/Slide4.png" -->
 
-<h2><a href="http://jsbin.com/rowoca/4/edit">Clearing Floats</a></h2>
+<h2><a href="http://jsbin.com/rowoca/8/edit?html,output">Clearing Floats</a></h2>
 
 <ul>
   <li><a href="http://learnlayout.com/clear.html">Learn CSS Layout: clear</a></li>
@@ -325,7 +316,7 @@ Right click on something you want to change click "Inspect Element"
 
 <!-- .slide: data-background="../template/images/Slide4.png" -->
 
-<h2><a href="http://jsbin.com/sihovo/7/edit">Clearfix</a></h2>
+<h2><a href="http://jsbin.com/sihovo/10/edit?html,output">Clearfix</a></h2>
 
 <ul>
   <li><a href="http://learnlayout.com/clearfix.html">Learn CSS Layout: clearfix</a></li>
@@ -335,7 +326,7 @@ Right click on something you want to change click "Inspect Element"
 
 <!-- .slide: data-background="../template/images/Slide4.png" -->
 
-<h2><a href="http://jsbin.com/yufimes/3/edit">The Box Model</a></h2>
+<h2><a href="http://jsbin.com/yufimes/edit?html,output">The Box Model</a></h2>
 
 <ul>
   <li><a href="https://css-tricks.com/the-css-box-model/">The CSS Box Model</a></li>
@@ -347,7 +338,7 @@ Right click on something you want to change click "Inspect Element"
 
 <!-- .slide: data-background="../template/images/Slide4.png" -->
 
-<h2><a href="http://jsbin.com/nodufe/6/edit?html,output">Box Sizing</a></h2>
+<h2><a href="http://jsbin.com/nodufe/9/edit?html,output">Box Sizing</a></h2>
 
 <ul>
   <li><a href="http://learnlayout.com/box-sizing.html">Learn CSS Layout: box-sizing</a></li>
@@ -360,7 +351,7 @@ Right click on something you want to change click "Inspect Element"
 
 <!-- .slide: data-background="../template/images/Slide4.png" -->
 
-<h2><a href="http://jsbin.com/livofev/4/edit">Flexbox</a></h2>
+<h2><a href="http://jsbin.com/livofev/8/edit?html,output">Flexbox</a></h2>
 
 <ul>
   <li><a href="http://flexboxfroggy.com/">Flexbox Froggy</a></li>
@@ -387,7 +378,7 @@ Right click on something you want to change click "Inspect Element"
 
 <!-- .slide: data-background="../template/images/Slide4.png" -->
 
-<h2><a href="http://jsbin.com/gibuhe/4/edit?html,output">Media Queries and Responsive Design</a></h2>
+<h2><a href="http://jsbin.com/gibuhe/edit?html,output">Media Queries and Responsive Design</a></h2>
 
 <ul>
   <li><a href="http://mediaqueri.es/">Responsive design gallery</a></li>
@@ -400,7 +391,7 @@ Right click on something you want to change click "Inspect Element"
 
 <!-- .slide: data-background="../template/images/Slide4.png" -->
 
-<h2><a href="http://jsbin.com/babiwa/2/edit">Positioning</a></h2>
+<h2><a href="http://jsbin.com/babiwa/4/edit?html,output">Positioning</a></h2>
 
 <ul>
   <li><a href="http://learnlayout.com/position.html">Learn CSS Layout: position</a></li>
@@ -424,7 +415,7 @@ Right click on something you want to change click "Inspect Element"
 
 <!-- .slide: data-background="../template/images/Slide4.png" -->
 
-<h2><a href="http://jsbin.com/dugapa/6/edit">Typography (Sizing Type)</a></h2>
+<h2><a href="http://jsbin.com/dugapa/7/edit">Typography (Sizing Type)</a></h2>
 
 <ul>
   <li><a href="http://type-scale.com/">TypeScale</a></li>
@@ -435,11 +426,11 @@ Right click on something you want to change click "Inspect Element"
 
 <!-- .slide: data-background="../template/images/Slide4.png" -->
 
-<h2><a href="http://jsbin.com/jafeza/3/edit">Adding Color</a></h2>
+<h2><a href="http://jsbin.com/jafeza/6/edit?html,output">Adding Color</a></h2>
 
 <ul>
   <li><a href="https://flatuicolors.com/">Flat UI Colors</a></li>
-  <li><a href="http://esri.github.io/calcite-web/color/">Calcite Web Colors</a></li>
+  <li><a href="http://esri.github.io/calcite-web/documentation/color/">Calcite Web Colors</a></li>
   <li><a href="http://jxnblk.com/colorable/demos/matrix/">Color Pairing Matrix</a></li>
   <li><a href="https://color.adobe.com/create/color-wheel/">Adobe Kuler</a></li>
   <li><a href="http://www.colourlovers.com/palettes">Color Lovers</a></li>
@@ -449,7 +440,7 @@ Right click on something you want to change click "Inspect Element"
 
 <!-- .slide: data-background="../template/images/Slide4.png" -->
 
-<h2><a href="http://jsbin.com/gixaro/edit?html,js,output">Adding JavaScript</a></h2>
+<h2><a href="http://jsbin.com/gixaro/13/edit?html,output">Adding JavaScript</a></h2>
 
 ---
 
@@ -467,8 +458,18 @@ Right click on something you want to change click "Inspect Element"
 
 <h2>More Browser Compatibility</h2>
 
-<p>Remember Microsoft only supports IE 11 offically now. All other versions are not supported and might have security bugs.</p>
+<p>Remember Microsoft only supports IE 11 officially now. All other versions are not supported and might have security bugs.</p>
 <p>Scary!</p>
+
+---
+
+<!-- .slide: data-background="../template/images/Slide4.png" -->
+
+## Best Practices
+
+* Keep selectors as simple as possible
+* Don't use tools until you are familiar with the basics
+* Watch out for the size of web fonts
 
 ---
 
