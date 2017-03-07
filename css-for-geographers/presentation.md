@@ -473,6 +473,15 @@ Right click on something you want to change click "Inspect Element"
 
 ---
 
+# More `_______`  for Geographers
+
+* Git/Github for Geographers<br>Wednesday 5:30pm, Santa Rosa
+* JavaScript for Geographers<br>Thursday 9am, Demo Theater 1 - Oasis 1
+* CSS for Geographers<br>Friday 1pm, Pasadena-Sierra-Ventura
+
+
+---
+
 <!-- .slide: data-background="../template/images/Slide4.png" -->
 
 # Thank You!
