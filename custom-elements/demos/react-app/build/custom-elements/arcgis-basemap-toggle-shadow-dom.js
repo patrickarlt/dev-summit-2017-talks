@@ -105,7 +105,7 @@ require([
      * This is the callback of our click handler which will toggle the
      * basemap on the Map object.
      */
-    handleClick () {
+    handleClick (e) {
       this.viewModel.toggle();
       e.preventDefault();
     }
