@@ -38,7 +38,7 @@ require([
      */
     connectedCallback () {
       this.appendChild(this.container);
-      this.setup();
+      this.setupMap();
     }
 
     /**

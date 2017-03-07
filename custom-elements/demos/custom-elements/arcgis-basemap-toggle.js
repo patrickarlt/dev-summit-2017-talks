@@ -22,7 +22,6 @@ require([
 
       this.button = document.createElement('button'); // setup a button for users to click
       this.button.textContent = 'Toggle';
-      this.appendChild(this.button); // add the button to the DOM as a child of this element
 
       this.viewModel = new BasemapToggleViewModel(); // create a new view model
     }
@@ -33,6 +32,7 @@ require([
      * disconnectedCallback lifecycle function.
      */
     connectedCallback () {
+      this.appendChild(this.button); // add the button to the DOM as a child of this element
       this.setupViewModel(); // try to setup the view model
       this.addEventListener('click', this.handleClick); // listen for a click event to bubble up and handle it
     }
